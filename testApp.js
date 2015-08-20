@@ -23,6 +23,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.buttonDropdown.helpers({
+    dropdownName: function() {
+      return this._id;
+    }
+  });
+
   Template.buttonDropdown.created = function(){
     this.data.ddName = this.data._id; //this is to dynamically name the dropdowns
   };

@@ -1,0 +1,17 @@
+head
+  title test app
+body
+  +hello
+
+template(name="hello")
+  p #{results}
+  each button
+    +buttonDropdown
+
+template(name="buttonDropdown")
+  +dropdownTrigger(name=dropdownName)
+    button Trigger #{this._id}
+  +dropdown(name=dropdownName)
+    ul
+      li.normal(class="#{dropdownName}") Normal
+      li.callback(class="#{dropdownName}") Call to server #{this.prop}
