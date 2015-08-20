@@ -1,0 +1,27 @@
+<head>
+  <title>testApp</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <p>{{results}}</p>
+  {{#each button}}
+     {{> buttonDropdown}}
+  {{/each}}
+</template>
+
+<template name="buttonDropdown">
+  {{#dropdownTrigger name=this.ddName}}
+    <button>Trigger {{this._id}}</button>
+  {{/dropdownTrigger}}
+
+  {{#dropdown name=this.ddName}}
+    <ul>
+      <li class="normal">Normal</li>
+      <li class="callback">Call to server {{this.prop}}</li>
+    </ul>
+  {{/dropdown}}
+</template>
